@@ -1,5 +1,6 @@
 from src.clients import base_client
 import pytest
+import random
 
 USERS_ENDPOINT = "/users"
 
@@ -19,7 +20,7 @@ def test_create_user(admin_token):
     response = base_client.post(
     endpoint=USERS_ENDPOINT,
     token=admin_token,
-    data=payload
+    data=create_payload
     )
 
     print("STATUS:", response.status_code)
