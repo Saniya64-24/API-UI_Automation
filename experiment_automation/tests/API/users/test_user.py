@@ -5,9 +5,9 @@ from src.clients.user_cleint import create_users
 @pytest.mark.parametrize(
     "name,email,password,role,age",
     [
-        ("Alice", "alice12@example.com", "Password123!", "user", 22),
-        ("Bob", "bob1@example.com", "Password123!", "user", 25),
-        ("Charlie", "charlie1@example.com", "Password123!", "admin", 30),
+        ("Alice1", "alice112@example.com", "Password123!", "user", 22),
+        ("Bob1", "bob11@example.com", "Password123!", "user", 25),
+        ("Charlie1", "charlie11@example.com", "Password123!", "admin", 30),
     ]
 )
 def test_create_multiple_users(admin_token, name, email, password, role, age):

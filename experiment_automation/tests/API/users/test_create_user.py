@@ -21,5 +21,5 @@ def test_create_user(admin_token):
 
     print("STATUS:", response.status_code)
     print("BODY:", response.text)
-    assert response.status_code == 409 #conflict 
+    assert response.status_code == 201 #conflict 
     # assert response.json()["name"] == "Test User"

@@ -14,7 +14,10 @@ Run Tests
 
 pytest -n 3
 
-Run with Allure
+- To create html report:
 
+pytest --html=reports/report.html --self-contained-html 
+
+- Run with Allure
 pytest --alluredir=reports
 allure serve reports

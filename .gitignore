@@ -12,17 +12,11 @@ env/
 # Pytest cache
 .pytest_cache/
 
-# Allure reports
-allure-results/
-allure-report/
-
 # Test reports and screenshots
 reports/
 reports/screenshots/
 
-# Logs
-logs/
-*.log
+
 
 # IDE files
 .vscode/
@@ -31,3 +25,11 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Allure reports
+allure-results/
+allure-report/
