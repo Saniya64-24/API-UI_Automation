@@ -39,6 +39,30 @@ pipeline {
                 archiveArtifacts artifacts: 'allure-report/**', fingerprint: true
             }
         }
+    }
+    triggers {
+        githubPush()
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/Saniya64-24/API-UI_Automation.git'
+            }
+        }
+
+        stage('Install Requirements') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'pytest'
+            }
+        }
 
     }
 }
