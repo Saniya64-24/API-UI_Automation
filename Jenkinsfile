@@ -1,12 +1,15 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+    }
+
     stages {
 
         stage('Clone Repository') {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/Saniya64-24/API-UI_Automation.git'
+                git branch: 'main', url: 'https://github.com/Saniya64-24/API-UI_Automation.git'
             }
         }
 
@@ -37,30 +40,6 @@ pipeline {
         stage('Archive Allure Report') {
             steps {
                 archiveArtifacts artifacts: 'allure-report/**', fingerprint: true
-            }
-        }
-    }
-    triggers {
-        githubPush()
-    }
-
-    stages {
-
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Saniya64-24/API-UI_Automation.git'
-            }
-        }
-
-        stage('Install Requirements') {
-            steps {
-                sh 'pip install -r requirements.txt'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'pytest'
             }
         }
 
